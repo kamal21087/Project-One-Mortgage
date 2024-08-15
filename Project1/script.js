@@ -1,3 +1,5 @@
+const button = document.getElementById(`Calculate`);
+button.addEventListener(`click`, calculate());
 function calculate() {
 
     const loanAmount = parseFloat(document.getElementById('loanAmount').value);
@@ -31,22 +33,18 @@ function calculate() {
     if (isNaN(loanAmount) || isNaN(downPayment) || isNaN(mortgageTerm) || isNaN(interestRate)) {
 
         alert('Fill out all input fields!')
+        console.log(`Your Principal`)
 
     } else {
         console.log("You did not specify the right loan terms")
 
     }
 
-    
+
+disResults(totalPrincipal, totalInterest, totalAmount);
 
 } 
-function disBox() {
-    document.getElementById(`Mortgage-Box`);
 
-}
 function disResults() {
     document.getElementById(`Results`);
-
-    
-
 }
