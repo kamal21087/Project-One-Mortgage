@@ -41,11 +41,11 @@ function calculate() {
 
 } 
 function disBox() {
-    document.getElementById(`Mortgage-Box`)
+    document.getElementById(`Mortgage-Box`);
 
 }
 function disResults() {
-    document.getElementById(`Results`)
+    document.getElementById(`Results`);
 
     
 
