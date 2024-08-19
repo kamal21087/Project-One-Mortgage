@@ -16,7 +16,7 @@
     background-color: white;
 }
 
-#Term {
+#mortgageTerm {
     display: inline-flex;
     padding: 20px 17px;
     flex-direction: column;
