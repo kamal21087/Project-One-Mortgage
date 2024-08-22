@@ -29,7 +29,7 @@ function calculate() {
 
     const principal = loanAmount - downPayment;
     const monthlyInterestRate = (interestRate / 100) / 12;
-    const numberOfPayments = mortgageTerm;
+    const numberOfPayments = mortgageTerm * 12; // Assume mortgageTerm is in years
 
     const numerator = principal * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments);
     const denominator = Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1;
@@ -40,7 +40,7 @@ function calculate() {
     localStorage.setItem('monthlyPayment', monthlyPayment.toFixed(2));
     localStorage.setItem('totalPrincipal', principal.toFixed(2));
     localStorage.setItem('totalInterest', (monthlyPayment * numberOfPayments - principal).toFixed(2));
-    localStorage.setItem('totalAmount', (parseFloat(principal.toFixed(2)) + parseFloat((monthlyPayment * numberOfPayments - principal).toFixed(2))).toFixed(2));
+    localStorage.setItem('totalAmount', (monthlyPayment * numberOfPayments).toFixed(2));
 }
 
 function saveToLocalStorage() {
@@ -55,7 +55,7 @@ function saveToLocalStorage() {
     localStorage.setItem('interestRate', interestRate);
 }
 
-// Optionally, you can add code to populate the form with stored values when the page loads
+// Optionally, populate the form with stored values when the page loads
 window.addEventListener('load', function() {
     const storedLoanAmount = localStorage.getItem('loanAmount');
     const storedDownPayment = localStorage.getItem('downPayment');
