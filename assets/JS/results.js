@@ -5,7 +5,7 @@ window.addEventListener('load', function() {
   const totalAmount = localStorage.getItem('totalAmount');
 
   if (monthlyPayment) document.getElementById('monthlyPayment').innerText = `$${monthlyPayment}`;
-  if (totalPrincipal) document.getElementById('totalPrincipal').innerText = `$${totalPrincipal}`;
-  if (totalInterest) document.getElementById('totalInterest').innerText = `$${totalInterest}`;
-  if (totalAmount) document.getElementById('totalAmount').innerText = `$${totalAmount}`;
+  if (totalPrincipal) document.getElementById('totalPrincipalValue').innerText = `$${totalPrincipal}`;
+  if (totalInterest) document.getElementById('totalInterestValue').innerText = `$${totalInterest}`;
+  if (totalAmount) document.getElementById('totalAmountValue').innerText = `$${totalAmount}`;
 });
